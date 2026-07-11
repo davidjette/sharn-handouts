@@ -2,91 +2,260 @@
 <html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HB-CHORUS-13 — The Fatanya Nyel</title>
-<link rel="stylesheet" href="assets/nimbus.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* The Homebrewery editor shell (.brewRenderer = height:100vh; overflow-y:scroll) is removed
-   from the markup; the browser window is the only scroller, so the page just flows. */
-html,body{height:auto!important;min-height:100%!important;max-height:none!important;
- overflow:visible!important;margin:0;background:#34332f;}
-.pages{display:block!important;height:auto!important;max-height:none!important;
- overflow:visible!important;margin:0!important;padding:26px 0 60px!important;}
-.pages>.page{margin:0 auto 30px!important;box-shadow:1px 4px 14px #000!important;}
-.np-banner{font-family:'Open Sans','Helvetica',sans-serif;font-weight:800;letter-spacing:4px;
- font-size:12px;color:#5a1414;border-top:2px solid #5a1414;border-bottom:2px solid #5a1414;
- padding:3px 0;margin-bottom:10px;text-align:center;}
-.np-stamp{position:absolute;top:46px;right:26px;transform:rotate(8deg);border:3px solid #7a1f1f;
- color:#7a1f1f;padding:3px 12px;font-family:'Open Sans','Helvetica',sans-serif;font-weight:800;
- letter-spacing:3px;font-size:16px;opacity:.78;border-radius:4px;z-index:5;}
-.np-eyebrow{font-family:'Open Sans','Helvetica',sans-serif;font-weight:700;letter-spacing:3px;
- font-size:11px;color:#7a2b2b;margin:0 0 -4px;}
-.np-meta{font-size:9px;line-height:1.35;margin:.1cm 0 .15cm;}
-.np-xref{font-size:9px;margin-top:.15cm;}
-.np-inferred{font-family:'Open Sans','Helvetica',sans-serif;font-weight:700;letter-spacing:2px;
- font-size:8px;color:#6a5a2a;border:1px solid #6a5a2a;border-radius:3px;padding:1px 5px;}
-.redact{background:#11100c;color:#11100c;padding:0 .12em;border-radius:1px;user-select:none;}
-/* Every page must GROW to fit its content. .page is a CSS multi-column box with
-   column-fill:auto, which honors its height and overflows extra content instead of
-   growing. Fully disable multi-column so each page flows as a normal block. */
-.page.np-index, .page.np-index .columnWrapper{
- column-count:auto!important;-webkit-column-count:auto!important;
- column-width:auto!important;column-fill:auto!important;column-gap:normal!important;
- height:auto!important;}
-/* .page uses `contain:strict` (size containment) + content-visibility:auto, which size
-   the box IGNORING its content -- locking it at min-height. Turn that off so it grows. */
-.page.np-index{min-height:279.4mm;overflow:visible!important;
- contain:none!important;content-visibility:visible!important;contain-intrinsic-size:auto!important;}
-table.np-reg{font-size:9px;line-height:1.22;width:100%;}
-table.np-reg th{font-size:9px;text-align:left;}
-table.np-reg td:first-child{font-weight:700;white-space:nowrap;}
-.np-legend{font-size:8.6px;line-height:1.3;}
-.np-foot{font-size:8px;font-style:italic;color:#3a3326;margin-top:.2cm;}
-.np-litany{margin:.35cm 1.2cm;text-align:center;font-style:italic;font-size:11.5px;line-height:1.7;
- letter-spacing:1px;}
-.np-litany .src{font-style:normal;font-size:8px;letter-spacing:0;display:block;margin-top:.15cm;
- color:#3a3326;}
-.np-sig{text-align:right;font-style:italic;margin-top:.1cm;}
+/* ============ HB-CHORUS-13 — MT. SILICON ARCHIVE ============
+   A typed intelligence file pulled from a foundry archive:
+   manila sheets, rubber stamps, rubric-tabbed sections,
+   two-column typescript. Secret-dossier weathering.         */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#26221c;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 4%, rgba(230,215,170,.06), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 2px, transparent 2px 110px);
+  padding:46px 12px 90px;
+  font-family:'Courier Prime',monospace;
+  color:#2a241a;
+}
+.file{max-width:860px;margin:0 auto}
+
+/* ---------- folder tab ---------- */
+.tab{
+  display:inline-block;position:relative;z-index:2;
+  background:#c9b98e;color:#3a3020;
+  font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:3px;font-size:.85rem;
+  padding:9px 26px 7px;margin:0 0 -3px 34px;
+  border-radius:6px 6px 0 0;
+  box-shadow:0 -3px 8px rgba(0,0,0,.25);
+}
+
+/* ---------- sheets ---------- */
+.sheet{
+  position:relative;
+  background:#e4d9b8;
+  background-image:
+    radial-gradient(ellipse at 85% 6%, rgba(120,90,40,.10), transparent 50%),
+    radial-gradient(ellipse at 8% 96%, rgba(90,70,40,.12), transparent 55%),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0 1px, transparent 1px 3px);
+  box-shadow:0 12px 34px rgba(0,0,0,.6);
+  padding:0 0 56px;
+  margin:0 0 38px;
+}
+.sheet::before{ /* punch holes, top-left corner treatment */
+  content:"";position:absolute;top:18px;left:16px;width:11px;height:11px;border-radius:50%;
+  background:#26221c;box-shadow:0 26px 0 #26221c, inset 0 1px 2px rgba(0,0,0,.8);
+  opacity:.85;
+}
+.sheet::after{ /* faint horizontal fold */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg, transparent 49.7%, rgba(0,0,0,.05) 50%, rgba(255,255,255,.07) 50.3%, transparent 50.7%);
+}
+
+/* ---------- classification furniture ---------- */
+.class-strip{
+  background:repeating-linear-gradient(-45deg, #7a1f1f 0 16px, #e4d9b8 16px 26px);
+  height:12px;
+}
+.class-line{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 42px 8px;border-bottom:2px solid #7a1f1f;
+  font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:4px;font-size:.78rem;color:#7a1f1f;
+}
+.class-line .ref{letter-spacing:2px}
+.stamp{
+  position:absolute;top:64px;right:34px;transform:rotate(9deg);z-index:3;
+  border:3px double #a02222;color:#a02222;border-radius:5px;
+  padding:5px 16px;font-family:'Special Elite',monospace;font-size:1.15rem;letter-spacing:4px;
+  opacity:.8;mix-blend-mode:multiply;
+}
+.stamp.second{top:auto;bottom:40px;right:60px;transform:rotate(-6deg);font-size:.9rem;opacity:.65}
+
+/* ---------- header block ---------- */
+.head{padding:30px 56px 0}
+.office{
+  font-family:'Special Elite',monospace;font-size:.82rem;letter-spacing:1px;color:#4a3d26;
+  border-bottom:1px solid rgba(74,61,38,.4);padding-bottom:10px;margin-bottom:22px;
+}
+.eyebrow{
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:.75rem;letter-spacing:5px;
+  color:#7a2b2b;margin:0 0 6px;
+}
+h1{
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:2.5rem;letter-spacing:2px;
+  text-transform:uppercase;margin:0;line-height:1.05;color:#2a241a;
+}
+.subtitle{
+  font-family:'Special Elite',monospace;font-size:1.02rem;color:#5a4a2e;
+  margin:8px 0 0;letter-spacing:.5px;
+}
+
+/* ---------- file card (meta) ---------- */
+.filecard{
+  margin:26px 56px 0;
+  border:1.5px solid #4a3d26;
+  background:rgba(255,250,230,.35);
+}
+.filecard .row{
+  display:grid;grid-template-columns:150px 1fr;
+  border-bottom:1px solid rgba(74,61,38,.3);
+}
+.filecard .row:last-child{border-bottom:none}
+.filecard .k{
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:.72rem;letter-spacing:2px;
+  color:#7a2b2b;padding:9px 12px 7px;border-right:1px solid rgba(74,61,38,.3);
+  background:rgba(122,43,43,.05);
+}
+.filecard .v{font-size:.85rem;line-height:1.5;padding:8px 14px}
+
+/* ---------- sections ---------- */
+section{padding:0 56px;margin-top:38px}
+.rubric{
+  display:flex;align-items:baseline;gap:14px;
+  border-bottom:2px solid #7a1f1f;padding-bottom:6px;margin-bottom:18px;
+}
+.rubric .no{
+  font-family:'Special Elite',monospace;font-size:.8rem;color:#a02222;letter-spacing:2px;white-space:nowrap;
+}
+.rubric h2{
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:1.25rem;letter-spacing:2.5px;
+  text-transform:uppercase;margin:0;color:#2a241a;
+}
+.cols{
+  column-count:2;column-gap:2.6rem;
+  column-rule:1px solid rgba(74,61,38,.25);
+  font-size:.92rem;line-height:1.62;text-align:justify;hyphens:auto;
+}
+.cols p{margin:0 0 1em}
+.cols p:first-child::first-letter{
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:2.6em;float:left;
+  line-height:.85;padding:2px 8px 0 0;color:#7a1f1f;
+}
+strong{letter-spacing:.3px}
+em{font-style:italic}
+
+/* ---------- predictions list ---------- */
+.predict-label{
+  font-family:'Special Elite',monospace;font-size:.95rem;letter-spacing:1px;color:#4a3d26;margin:6px 0 14px;
+}
+ul.predict{list-style:none;margin:0;padding:0}
+ul.predict li{
+  position:relative;margin:0 0 14px;padding:12px 16px 12px 46px;
+  background:rgba(255,250,230,.35);border:1px solid rgba(74,61,38,.35);
+  font-size:.92rem;line-height:1.6;
+}
+ul.predict li::before{
+  content:"■";position:absolute;left:16px;top:11px;color:#a02222;font-size:1rem;
+}
+ul.predict li b.lead{
+  display:block;font-family:'Oswald',sans-serif;font-weight:600;font-size:.88rem;
+  letter-spacing:2px;text-transform:uppercase;color:#7a1f1f;margin-bottom:4px;
+}
+
+/* ---------- continuation header (sheet 2) ---------- */
+.cont{
+  padding:22px 56px 0;font-family:'Special Elite',monospace;font-size:.85rem;color:#4a3d26;
+  letter-spacing:1px;
+}
+.cont b{color:#7a1f1f}
+
+/* ---------- footer line ---------- */
+.footline{
+  margin:44px 56px 0;padding-top:10px;border-top:1px solid rgba(74,61,38,.4);
+  font-family:'Special Elite',monospace;font-size:.72rem;letter-spacing:2px;color:#6a5a3a;
+  display:flex;justify-content:space-between;
+}
+
+@media (max-width:720px){
+  .head,.filecard,section,.footline,.cont{padding-left:26px;padding-right:26px}
+  .filecard{margin-left:26px;margin-right:26px}
+  .cols{column-count:1}
+  h1{font-size:1.8rem}
+  .stamp{top:52px;right:14px;font-size:.9rem}
+  .tab{margin-left:16px}
+}
+@media print{
+  body{background:#fff;padding:0}
+  .sheet{box-shadow:none;page-break-after:always}
+}
 </style>
 </head>
-<body><div class="pages" lang="en" style="zoom: 100%; gap: 5px 10px;">
+<body>
+<div class="file">
+<div class="tab">FILE&ensp;HB-CHORUS-13</div>
 
-<!-- ======================= PAGE 1 ======================= -->
-<div class="page np-index" id="p1" data-index="0"><div class="columnWrapper">
-<div class="np-stamp">EYES ONLY</div>
-<div class="np-banner">MT. SILICON ARCHIVE &mdash; MOST SECRET</div>
-<div class="block note"><h5 id="office">Office of the Progenitor &mdash; Directorate of Relic Intelligence</h5>
+<!-- ================= SHEET ONE ================= -->
+<div class="sheet">
+<div class="class-strip"></div>
+<div class="class-line"><span>MT. SILICON ARCHIVE</span><span class="ref">MOST SECRET</span></div>
+<div class="stamp">EYES ONLY</div>
+
+<div class="head">
+<p class="office">Office of the Progenitor — Directorate of Relic Intelligence</p>
+<p class="eyebrow">INTELLIGENCE DOSSIER — HB-CHORUS-13</p>
+<h1>The Fatanya Nyel</h1>
+<p class="subtitle">"Hell's Bells" — Instruments of the Eternal Nightfall</p>
 </div>
-<div class="np-eyebrow">INTELLIGENCE DOSSIER &mdash; HB-CHORUS-13</div>
-<h1 id="title">The Fatanya Nyel</h1>
-<h2 id="subtitle">&ldquo;Hell's Bells&rdquo; &mdash; Instruments of the Eternal Nightfall</h2>
-<p class="np-meta"><strong>Type:</strong> Necromantic resonance instruments; bell-form infernal machines<br>
-<strong>Origin:</strong> One original artifact of ancient elvish fabrication (the Greenbluff Bell); all others are modern Imperial reproductions<br>
-<strong>Fabrication:</strong> Imperial foundries under Black Dove consecration, financed by the House of Caius<br>
-<strong>Deployment:</strong> The Houses of Mercy &mdash; former Sovereign Host churches, temples, and hospitals, continent-wide<br>
-<strong>Assessed Intent:</strong> A coordinated continental necromantic rising. The sisterhood's own liturgy names it <strong>the Eternal Nightfall</strong>.</p>
-<h3 id="assessment">Assessment of the Threat</h3>
-<p>Uriel and the Black Dove sisterhood have used the Sovereign Host churches, temples, and hospitals, turning them into Houses of Mercy staffed by Black Dove nurses and nuns, and to the farthest extent possible, installed specially manufactured Hell's Bells in every one of them. The Bells are made from an infernal ore which is tempered and shaped according to ancient Dwarven secrets uncovered likewise from infernal sources, which cause their vibrating frequencies to harmonize with arcane forces governing life and death, intoning what Pierce's research calls the &ldquo;Black Noise&rdquo; &mdash; which corrodes sanity, leading to gruesome death, and simultaneously causes the dead to rise under the control of a sufficiently powerful necromancer. Locke Pierce studied this phenomenon and the original artifact, which is thought to be the only original example of an attempt; some speculate that it was commissioned by Erandis Vol herself, though others claim the &ldquo;Celestial Queen&rdquo; who commanded its creation was some other elvish source. Since rising to her station as the caretaker Empress, Uriel has used the tremendous personal wealth of the Emperor and the House of Caius to bankroll the fabrication and deployment of the Hell's Bells, while seizing the considerable assets of the Sovereign Host dioceses and abbeys impounded by Imperial decree; she has developed a continent-scale network of medical facilities which double as laboratories and deployment centers for a widespread necromantic apocalypse, rung in with a chorus of bells.</p>
-<div class="blank"></div>
-<h3 id="original">The Greenbluff Bell (Notes from the Progenitor)</h3>
+
+<div class="filecard">
+<div class="row"><div class="k">TYPE</div><div class="v">Necromantic resonance instruments; bell-form infernal machines</div></div>
+<div class="row"><div class="k">ORIGIN</div><div class="v">One original artifact of ancient elvish fabrication (the Greenbluff Bell); all others are modern Imperial reproductions</div></div>
+<div class="row"><div class="k">FABRICATION</div><div class="v">Imperial foundries under Black Dove consecration, financed by the House of Caius</div></div>
+<div class="row"><div class="k">DEPLOYMENT</div><div class="v">The Houses of Mercy — former Sovereign Host churches, temples, and hospitals, continent-wide</div></div>
+<div class="row"><div class="k">ASSESSED INTENT</div><div class="v">A coordinated continental necromantic rising. The sisterhood's own liturgy names it <strong>the Eternal Nightfall</strong>.</div></div>
+</div>
+
+<section>
+<div class="rubric"><span class="no">SEC. 01</span><h2>Assessment of the Threat</h2></div>
+<div class="cols">
+<p>Uriel and the Black Dove sisterhood have used the Sovereign Host churches, temples, and hospitals, turning them into Houses of Mercy staffed by Black Dove nurses and nuns, and to the farthest extent possible, installed specially manufactured Hell's Bells in every one of them. The Bells are made from an infernal ore which is tempered and shaped according to ancient Dwarven secrets uncovered likewise from infernal sources, which cause their vibrating frequencies to harmonize with arcane forces governing life and death, intoning what Pierce's research calls the "Black Noise" — which corrodes sanity, leading to gruesome death, and simultaneously causes the dead to rise under the control of a sufficiently powerful necromancer.</p>
+<p>Locke Pierce studied this phenomenon and the original artifact, which is thought to be the only original example of an attempt; some speculate that it was commissioned by Erandis Vol herself, though others claim the "Celestial Queen" who commanded its creation was some other elvish source.</p>
+<p>Since rising to her station as the caretaker Empress, Uriel has used the tremendous personal wealth of the Emperor and the House of Caius to bankroll the fabrication and deployment of the Hell's Bells, while seizing the considerable assets of the Sovereign Host dioceses and abbeys impounded by Imperial decree; she has developed a continent-scale network of medical facilities which double as laboratories and deployment centers for a widespread necromantic apocalypse, rung in with a chorus of bells.</p>
+</div>
+</section>
+
+<section>
+<div class="rubric"><span class="no">SEC. 02</span><h2>The Greenbluff Bell <span style="font-weight:400">(Notes from the Progenitor)</span></h2></div>
+<div class="cols">
 <p>The Rekkenmark dispatched me, then a certified Ancient Relic Specialist, to the played-out mining camp at Greenbluff, after an incident below took the lives of a number of Empire-owned slaves. The survivors were recorded as having gone mad. Every one of them, mad in the same shape: they described a sound, deep in the workings, that shook the walls violently enough to bring down the gallery roof. The Assembly believed the incident related to a relic last attested in that region, and sent a retrieval party to meet me: the orphaned squire Esther Crona, the Black Dove acolyte Uriel Qualanthri, and the repulsive LeBeefe.</p>
 <p>I first stood in a room with Uriel Qualanthri at the bottom of the Greenbluff mine, and we carried the Fatanya Nyel out of it together. Every catastrophe in this file walked out of that room with us.</p>
 <p>The legend attached to the artifact runs so: a Celestial Queen buried the bell centuries ago. Its craftsmen were ancient elves, who fused the bell from an infernal metal. It emitted horrific tones that woke the dead, and those who stood close to the ringing went mad. In the mine we fought the risen and a rebel column that had come for the bell before us, and beneath them all we uncovered a buried chamber that had held the thing in silence for centuries. The Queen did not destroy it. I have come to believe she could not.</p>
-<p>Whoever she was &mdash; Erandis Vol, as the Directorate assesses, or some other power of the elvish line &mdash; the original is the only true Fatanya Nyel. Everything hanging in a House of Mercy tonight is a copy, cast in the last decade at the Empress's expense. The copies are weaker, and they do not need to be strong. They only need to resonate the mother bell's call. This means there can be many many more than thirteen. I suspect there are hundreds.</p>
+<p>Whoever she was — Erandis Vol, as the Directorate assesses, or some other power of the elvish line — the original is the only true Fatanya Nyel. Everything hanging in a House of Mercy tonight is a copy, cast in the last decade at the Empress's expense. The copies are weaker, and they do not need to be strong. They only need to resonate the mother bell's call. This means there can be many many more than thirteen. I suspect there are hundreds.</p>
 <p>We carried the original out of Greenbluff under Assembly seal and shipped it east by lightning rail, bound for Korth. Somewhere between Newham and the capital, a party boarded the train to take it from us. They failed. We killed John Stamos and blamed it on Lady Glow. I met Richard Blaze that day as well as a matter of fact, it must have been when he and Crona first met as well. I do not know how much Crona must have known about this insane plot by Uriel, but if she knew, she was even more evil than I knew.</p>
-</div></div>
+</div>
+</section>
 
-<!-- ======================= PAGE 2 ======================= -->
-<div class="page np-index" id="p2" data-index="1"><div class="columnWrapper">
-<div class="np-stamp">CHORUS</div>
-<div class="np-banner">MT. SILICON ARCHIVE &mdash; MOST SECRET</div>
-<h3 id="blacknoise">The Black Noise</h3>
+<div class="footline"><span>HB-CHORUS-13</span><span>LEAF ONE OF TWO</span></div>
+</div>
+
+<!-- ================= SHEET TWO ================= -->
+<div class="sheet">
+<div class="class-strip"></div>
+<div class="class-line"><span>MT. SILICON ARCHIVE</span><span class="ref">MOST SECRET</span></div>
+<div class="stamp">CHORUS</div>
+<p class="cont">HB-CHORUS-13 — continuation. <b>Leaf two.</b></p>
+
+<section>
+<div class="rubric"><span class="no">SEC. 03</span><h2>The Black Noise</h2></div>
+<div class="cols">
 <p>The ring you would hear if the Bells were rung is incidental. Fatanya Nyel emits a polyphase arcane emission which occupies multiple frequency bands across a thousand octaves both within, above and below human hearing. As a result it can travel continental distances and penetrate almost all matter to a depth of hundreds of feet, making low lying dungeons and caves no protection from the effects. It would turn graveyards, crypts and tombs into cacophonies of the Black Noise.</p>
-<p>The ore &mdash; raised, my metallurgists believe, from seams of the hardest and oldest known rock in Eberron &mdash; is tempered and shaped by a dwarven method that was itself likely derived from something infernal, and the resulting body vibrates in sympathy with the arcane forces governing life and death.</p>
-<p>My best predictions:</p>
-<ul>
-<li><strong>Silence does not stop it.</strong> A silence ward, a deafened ear, a sealed vault &mdash; these stop the toll, not the Noise. The frequency propagates through the arcane substrate, not the air. Wax in your ears will let you die without the courtesy of a warning.</li>
-<li><strong>The living unravel.</strong> Sustained proximity to an active bell corrodes sanity along the Greenbluff pattern: intrusive tolling, waking dreams of the grave, violent mania, and death &mdash; gruesome, and in every documented case, self-inflicted or mutual. The mad do not flee the bell. They defend it while they tear off their own skin.</li>
-<li><strong>The dead wake.</strong> Within the Noise, the dead rise where they lie &mdash; and the risen are not wild. They come up listening, ready to serve the will of a sufficiently powerful necromancer keyed in to the chorus. There is exactly one necromancer alive with the reach the network is tuned for. She breeds the corpse of the Emperor.</li>
-</ul>
-</div></div>
+<p>The ore — raised, my metallurgists believe, from seams of the hardest and oldest known rock in Eberron — is tempered and shaped by a dwarven method that was itself likely derived from something infernal, and the resulting body vibrates in sympathy with the arcane forces governing life and death.</p>
+</div>
 
-</div></body></html>
+<p class="predict-label">My best predictions:</p>
+<ul class="predict">
+<li><b class="lead">Silence does not stop it</b>A silence ward, a deafened ear, a sealed vault — these stop the toll, not the Noise. The frequency propagates through the arcane substrate, not the air. Wax in your ears will let you die without the courtesy of a warning.</li>
+<li><b class="lead">The living unravel</b>Sustained proximity to an active bell corrodes sanity along the Greenbluff pattern: intrusive tolling, waking dreams of the grave, violent mania, and death — gruesome, and in every documented case, self-inflicted or mutual. The mad do not flee the bell. They defend it while they tear off their own skin.</li>
+<li><b class="lead">The dead wake</b>Within the Noise, the dead rise where they lie — and the risen are not wild. They come up listening, ready to serve the will of a sufficiently powerful necromancer keyed in to the chorus. There is exactly one necromancer alive with the reach the network is tuned for. She breeds the corpse of the Emperor.</li>
+</ul>
+</section>
+
+<div class="stamp second">NO COPIES</div>
+<div class="footline"><span>HB-CHORUS-13</span><span>LEAF TWO OF TWO — END OF FILE</span></div>
+</div>
+
+</div>
+</body></html>
