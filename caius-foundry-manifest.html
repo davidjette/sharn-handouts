@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chancellery Seizure — Korranberg Foundry Schedule (fragment)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+DW+Pica:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+/* ============ KORRANBERG FOUNDRY TRUST — seized ledger leaf ============
+   Cold Imperial paperwork: ruled stationery, clerk's roman hand,
+   fire-charred lower edge, and the Chancellery's evidence docket
+   stapled over one corner.                                            */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#20211f;
+  background-image:radial-gradient(ellipse 80% 55% at 50% 5%, rgba(200,210,190,.05), transparent 60%);
+  padding:48px 12px 90px;
+  font-family:'IM Fell English',serif;
+}
+.wrap{max-width:780px;margin:0 auto;position:relative}
+
+/* ---- evidence docket (stapled over the top-left corner) ---- */
+.docket{
+  position:relative;z-index:3;width:min(430px,94%);
+  margin:0 0 -34px 0;
+  background:#cfd6cf;
+  border:1.5px solid #45524a;
+  padding:14px 18px 12px;
+  transform:rotate(-1.6deg);
+  box-shadow:0 6px 16px rgba(0,0,0,.5);
+  font-family:'Special Elite',monospace;color:#232a25;font-size:.8rem;line-height:1.55;
+}
+.docket h3{margin:0 0 6px;font-size:.85rem;letter-spacing:2px;font-weight:normal;
+  border-bottom:1px solid #45524a;padding-bottom:5px}
+.docket .most-secret{color:#5a1414;letter-spacing:2px}
+.docket::before,.docket::after{ /* staples */
+  content:"";position:absolute;width:16px;height:4px;background:#7c827c;
+  box-shadow:0 1px 1px rgba(0,0,0,.6);
+}
+.docket::before{top:6px;left:14px;transform:rotate(4deg)}
+.docket::after{top:6px;right:18px;transform:rotate(-6deg)}
+
+/* ---- the ledger leaf ---- */
+.leaf{
+  position:relative;z-index:1;
+  background:#e7dfc8;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 30px, rgba(90,80,50,.14) 30px 31px),
+    linear-gradient(90deg, transparent 0 56px, rgba(122,31,31,.35) 56px 57px, transparent 57px);
+  color:#2b2418;
+  padding:64px 46px 90px 78px;
+  box-shadow:0 12px 34px rgba(0,0,0,.6);
+  /* charred lower edge */
+  clip-path:polygon(0 0,100% 0,100% 88%,97% 91%,93% 89%,90% 94%,85% 91%,81% 96%,75% 92%,71% 97%,64% 93%,58% 98%,52% 94%,46% 99%,40% 95%,34% 99%,28% 95%,22% 98%,16% 94%,11% 97%,6% 93%,2% 96%,0 92%);
+}
+.leaf::after{ /* scorch shading along the burn */
+  content:"";position:absolute;left:0;right:0;bottom:0;height:150px;pointer-events:none;
+  background:linear-gradient(0deg, rgba(20,12,6,.85) 0%, rgba(60,35,15,.45) 34%, rgba(90,60,25,.18) 62%, transparent 100%);
+}
+.leaf h2{
+  margin:0 0 2px;text-align:center;font-size:1.35rem;letter-spacing:2px;font-weight:normal;
+  font-family:'IM Fell DW Pica',serif;
+}
+.leaf .sub{
+  text-align:center;font-style:italic;font-size:.95rem;margin:0 0 22px;color:#4a3d26;
+}
+.rule{border:none;border-top:1.5px solid rgba(60,45,25,.5);margin:16px 0}
+h4{
+  font-size:.92rem;letter-spacing:2px;font-weight:normal;margin:20px 0 8px;
+  color:#4a3d26;font-family:'IM Fell DW Pica',serif;
+}
+.summary p, .entry, .memo{font-size:1.02rem;line-height:1.62}
+.summary p{margin:6px 0}
+.entry{margin:14px 0;padding-left:2.4em;text-indent:-2.4em}
+.entry .pilcrow{font-family:'IM Fell DW Pica',serif;letter-spacing:1px}
+.burned{
+  display:inline-block;min-width:7em;height:.95em;vertical-align:-.15em;border-radius:2px;
+  background:linear-gradient(90deg, #3a2a16, #241708 40%, #3a2a16 80%);
+  box-shadow:0 0 4px rgba(30,18,6,.8);
+}
+.memo{margin:16px 0 0;font-style:italic}
+.memo b{font-style:normal}
+.closing{margin:22px 0 0;font-size:.92rem;font-style:italic;color:#4a3d26;text-align:center}
+strong{letter-spacing:.4px}
+em{font-style:italic}
+@media print{
+  body{background:#fff;padding:0}
+  .leaf{box-shadow:none}
+  .docket{box-shadow:none}
+}
+@media (max-width:640px){ .leaf{padding:54px 22px 90px 48px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="docket">
+<h3>CHANCELLERY OF SHARN — OFFICE OF SEIZURES</h3>
+Evidence item <b>7 of 22</b>, taken in the matter of the Lower City church impound. Recovered from the sacristy strong-box, partially burned — the sisters were feeding the box to the stove when the writ was served. Clerk's certification: this is the only leaf that survived whole. Leaves one through — we assess — three, destroyed.<br>
+<span class="most-secret">Forwarded to the Chancellor's party by order. Handle as MOST SECRET.</span>
+</div>
+
+<div class="leaf">
+<h2>KORRANBERG FOUNDRY TRUST</h2>
+<p class="sub">Private Schedule of Works — undertaken for the House of Caius, by standing draft.<br>Second leaf. Continued from the first.</p>
+<hr class="rule">
+
+<h4>STANDING SUMMARY, CARRIED FORWARD</h4>
+<div class="summary">
+<p>— Great castings, consecration grade: <strong>THIRTEEN commissioned. ELEVEN delivered. TWO in the yard.</strong></p>
+<p>— Minor castings, parish grade: <strong>three hundred forty-one</strong> delivered to the Houses to date; schedule of small consignments kept separately by the Sisters and <em>not</em> by this office.</p>
+<p>— All castings consecrated <strong>on delivery</strong>, by the Sisters alone. Foundry personnel are excluded from consecration and are reminded that curiosity is a breach of the draft.</p>
+</div>
+
+<h4>CONSIGNMENTS, CONTINUED</h4>
+
+<p class="entry"><span class="pilcrow">¶ 09.</span>&emsp;Great casting the ninth. Consigned to the cathedral-house at <strong>KORTH</strong>. Delivered; consecrated; receipt under the dove seal.</p>
+
+<p class="entry"><span class="pilcrow">¶ 10.</span>&emsp;Great casting the tenth. Consigned to the monastery precincts at <strong>ATUR</strong>. Delivered standing; the tower to be raised over it at the consignee's expense. Receipt under the dove seal.</p>
+
+<p class="entry"><span class="pilcrow">¶ 11.</span>&emsp;Great casting the eleventh. Consigned to the Grand Infirmary at <strong>FAIRHAVEN</strong>. Delivered by twenty-ox dray, Sister riding escort. Receipt under the dove seal.</p>
+
+<p class="entry"><span class="pilcrow">¶ 12.</span>&emsp;Great casting the twelfth. Consigned to <span class="burned"></span> — freight instructions withheld from this office; wagons provided sealed; drivers of the Sisters' own. Draft paid double for the blindness.</p>
+
+<p class="entry"><span class="pilcrow">¶ 13.</span>&emsp;Great casting the thirteenth. <strong>In the yard.</strong> Tuning not yet taken. <em>See memorandum below.</em></p>
+
+<p class="entry"><span class="pilcrow">¶ ∅.</span>&emsp;<strong>The Original.</strong> Not of this foundry, and the Trust will thank the House to record that it never was. Received under guard for the taking of tuning references only — our masters worked in wax and never with hammers, per the terms. Returned under escort to <strong>Her Radiance's keeping</strong>; destination withheld from schedule; escort <strong>Sister-Inquisitor M. D.</strong>, dove seal. The Trust petitions that no further reference work be sent to this yard. The men will not stay in the shop with it after dark, and the Trust has stopped fining them for it.</p>
+
+<p class="memo"><b>Memorandum on the thirteenth:</b> casting the thirteenth cannot take its tuning until the reference is consigned to us again, and the House's factor writes that the reference <em>will not travel again</em> before the appointed night. The thirteenth therefore waits on Her Radiance's convenience. The Trust notes for the record that it has met its dates and that the choir wants only what the House itself withholds.</p>
+
+<p class="closing">Drafts current. Dockets burned per standing instruction, this leaf excepted in error.</p>
+</div>
+
+</div>
+</body></html>

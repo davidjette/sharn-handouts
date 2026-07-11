@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Fulcrum Bell File — courier bundle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Homemade+Apple&family=Patrick+Hand&family=Shadows+Into+Light+Two&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============ THE FULCRUM BELL FILE — courier bundle ============
+   Visual language: NOT an intelligence product. A waxed-canvas packet
+   emptied onto a farmhouse table: one cover letter, fourteen mismatched
+   scraps, one last page written harder than the rest.               */
+:root{
+  --table:#241d16;
+  --ink:#2a2118;
+  --ink-hard:#1a120b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--table);
+  background-image:
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(255,240,200,.07), transparent 60%),
+    repeating-linear-gradient(93deg, rgba(0,0,0,.14) 0 2px, transparent 2px 90px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.015) 0 1px, transparent 1px 7px);
+  font-family:'Patrick Hand',cursive;
+  color:var(--ink);
+  padding:40px 12px 80px;
+}
+.bundle{max-width:860px;margin:0 auto}
+
+/* ---- the packet label ---- */
+.packet-label{
+  width:min(420px,90%);margin:0 auto 34px;padding:14px 18px 16px;
+  background:#8a7a5c;
+  background-image:repeating-linear-gradient(45deg, rgba(0,0,0,.06) 0 3px, transparent 3px 6px);
+  border:1px solid #4c4132;border-radius:2px;
+  box-shadow:0 6px 18px rgba(0,0,0,.55), inset 0 0 40px rgba(0,0,0,.25);
+  color:#241d12;text-align:center;
+  font-family:'Caveat',cursive;font-weight:700;font-size:1.5rem;line-height:1.25;
+  transform:rotate(-.8deg);
+}
+.packet-label small{display:block;font-size:.95rem;font-weight:600;margin-top:4px;letter-spacing:.5px}
+
+/* ---- shared paper ---- */
+.paper{
+  position:relative;
+  margin:0 auto 30px;padding:26px 30px 30px;
+  box-shadow:0 8px 22px rgba(0,0,0,.55), 0 1px 0 rgba(255,255,255,.05);
+  border-radius:1px;
+}
+.paper::before{ /* pin */
+  content:"";position:absolute;top:-9px;left:50%;margin-left:-7px;width:14px;height:14px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #d9c9a8, #6f5b39 60%, #3a2d18);
+  box-shadow:0 3px 5px rgba(0,0,0,.6);
+}
+
+/* ---- the cover letter ---- */
+.cover{
+  max-width:680px;
+  background:#e8dcc3;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(90,70,40,.18) 27px 28px),
+    radial-gradient(ellipse at 80% 10%, rgba(120,90,40,.12), transparent 55%);
+  font-family:'Caveat',cursive;font-size:1.32rem;line-height:28px;
+  color:var(--ink);
+  transform:rotate(-.4deg);
+}
+.cover p{margin:0 0 28px}
+.cover .sig{text-align:right;font-weight:700;font-size:1.5rem}
+
+/* ---- the scraps ---- */
+.scrap{max-width:600px;font-size:1.12rem;line-height:1.5}
+.scrap h4{
+  margin:0 0 8px;font-size:1.02rem;line-height:1.35;
+  border-bottom:1px dashed rgba(60,40,20,.4);padding-bottom:6px;
+}
+.scrap h4 .where{font-weight:700;letter-spacing:.3px}
+.scrap h4 .who{display:block;font-style:italic;font-weight:400;font-size:.92rem;opacity:.8}
+.scrap p{margin:8px 0 0}
+.scrap .num{
+  position:absolute;top:8px;right:12px;
+  font-family:'Caveat',cursive;font-weight:700;font-size:1.05rem;opacity:.55;
+}
+/* paper + hand variation — mismatched by design */
+.scrap:nth-of-type(4n+1){background:#e6d9bd;transform:rotate(.9deg);font-family:'Patrick Hand',cursive}
+.scrap:nth-of-type(4n+2){background:#ddd3c2;transform:rotate(-1.1deg);font-family:'Shadows Into Light Two',cursive;font-size:1.08rem}
+.scrap:nth-of-type(4n+3){background:#e9e2cf;transform:rotate(.5deg);font-family:'Caveat',cursive;font-size:1.3rem}
+.scrap:nth-of-type(4n){background:#d9cbb0;transform:rotate(-.6deg);font-family:'Homemade Apple',cursive;font-size:.98rem;line-height:1.85}
+/* a couple of stains */
+.scrap:nth-of-type(3)::after,.scrap:nth-of-type(9)::after{
+  content:"";position:absolute;width:90px;height:70px;border-radius:50%;
+  background:radial-gradient(circle, rgba(101,67,33,.16), rgba(101,67,33,.05) 60%, transparent 70%);
+  right:14px;bottom:10px;pointer-events:none;
+}
+/* torn bottom edge on a few */
+.scrap:nth-of-type(5n+2){
+  clip-path:polygon(0 0,100% 0,100% 96%,96% 100%,90% 97%,83% 100%,76% 97%,68% 100%,60% 98%,51% 100%,43% 97%,35% 100%,27% 98%,19% 100%,11% 97%,4% 100%,0 97%);
+  padding-bottom:38px;
+}
+
+/* ---- the last page ---- */
+.lastpage{
+  max-width:680px;
+  background:#e3d5b8;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(90,60,30,.2) 27px 28px);
+  font-family:'Caveat',cursive;font-size:1.34rem;line-height:28px;
+  color:var(--ink-hard);
+  transform:rotate(.3deg);
+  border-left:3px solid rgba(122,31,31,.45);
+}
+.lastpage p{margin:0 0 28px}
+.lastpage .sig{text-align:right;font-weight:700;font-size:1.4rem}
+.lastpage strong{letter-spacing:.3px}
+
+/* small print for the archivist's frame line */
+.frameline{
+  text-align:center;color:#a08c66;font-family:'IM Fell English',serif;font-style:italic;
+  font-size:.85rem;margin:0 0 26px;opacity:.8;
+}
+
+@media print{
+  body{background:#fff;padding:0}
+  .paper{box-shadow:none;border:1px solid #bbb;page-break-inside:avoid;margin-bottom:16px}
+  .packet-label{box-shadow:none;border:1px solid #999}
+}
+</style>
+</head>
+<body>
+<div class="bundle">
+
+<div class="packet-label">FULCRUM — BY HAND ONLY<small>no rail, no post, no arceye — hand to hand or burn it</small></div>
+<p class="frameline">— a waxed-canvas courier packet: one letter, fourteen scraps —</p>
+
+<!-- ============ COVER LETTER ============ -->
+<div class="paper cover">
+<p>Chancellor,</p>
+<p>Foxtale is aware of this. I'm sorry we haven't told you before, but after the Bell was discovered in the Hospital, and then the second one in the church Lower City, we put the word out to Fulcrum to look out for Bells. We quickly learned that Fulcrum has been counting bells for over a decade.</p>
+<p>Twenty years ago the Empire dug something out of a played-out mine at Greenbluff and put it on the lightning rail for Korth. Fulcrum boarded that train to take it and we failed. That's where John Stamos died. The Empire told everyone that Lady Glow had murdered him, that she was a rebel. She was, of course, but so was he.</p>
+<p>We never learned what the freight was beyond a Bell. So when the Houses of Mercy started to pop up, each with a big fucking bell, one of our agents tried to write it down. I wasn't even aware of this directive until I reached out, that's how old it was.</p>
+<p>Each scrap in this packet describes a church bell, I've stood under three of them myself. They never ring. Not for mass, not for fire or the dead. Whatever these are, they're waiting for something and the nuns tend to them like they know what.</p>
+<p>Uriel Qualanthri killed Lady Glow and stood her back up as a music box. It sings at the Emperor's bedside, they say. The sweetest voice in the world. Stamos died for this bell. So understand us, Chancellor. Fulcrum does not want the Empire reformed.</p>
+<p>When you go up the Qarth road, and you will, if there is anything left of her in that holy place, you give her quiet. And then you bury the whole choir of bitches in ground that doesn't settle.</p>
+<p class="sig">— I<br>Burn if taken</p>
+</div>
+
+<!-- ============ THE SCRAPS ============ -->
+<div class="paper scrap"><span class="num">1</span>
+<h4><span class="where">Korth — the old Host cathedral, now a mercy-house.</span><span class="who">This winter. A cook in a supper-house off the cathedral square; feeds us kitchen talk since the occupation.</span></h4>
+<p>"New bell went up when the nuns took the cathedral. Biggest casting I ever saw — they knocked the west door wider to bring it in. It has never rung once. The sisters sing the hours instead, and if you ask a nun why the bell is silent she smiles at you like you asked a child's question."</p>
+</div>
+
+<div class="paper scrap"><span class="num">2</span>
+<h4><span class="where">Atur — the Crimson Monastery precincts.</span><span class="who">Two summers back. A lamplighter who walks the monastery wall.</span></h4>
+<p>"They didn't hang the bell in the tower. They built the tower around the bell — scaffolded it standing on the ground and raised the stone up over it. Nuns wash it at dawn. Wash it. I've watched them do it, with cloths, like grooming a horse. It has no rope."</p>
+</div>
+
+<div class="paper scrap"><span class="num">3</span>
+<h4><span class="where">Fairhaven — Grand Infirmary of the Host.</span><span class="who">Last autumn. A porter at the infirmary gate; his sister nurses there.</span></h4>
+<p>"Bell came in on a dray with twenty oxen and a Sister riding the load like it was a coffin. Cathedral-grade, my sister says, big as anything in Flamekeep. It hangs over the long ward where the dying go. Never rung. The patients say you can feel it anyway, like a tooth about to ache."</p>
+</div>
+
+<div class="paper scrap"><span class="num">4</span>
+<h4><span class="where">Wroat — House of Mercy.</span><span class="who">This spring. A midwife.</span></h4>
+<p>"I asked them to ring for a christening, the way any chapel would. The sister said the bell is consecrated and does not ring for such things. For SUCH THINGS. It hangs behind a screen and the novices are whipped if they touch it. What does a bell ring for, if not for us?"</p>
+</div>
+
+<div class="paper scrap"><span class="num">5</span>
+<h4><span class="where">Wroath [sic] — the mercy-house.</span><span class="who">Undated. A carter, by way of the Galifar road.</span></h4>
+<p>"There's a bell in the mercy-house there behind a lattice-work, and no one has ever heard it. Thought you people collected this sort of thing."</p>
+</div>
+
+<div class="paper scrap"><span class="num">6</span>
+<h4><span class="where">Vathirond — House of Mercy.</span><span class="who">Two winters back. A gravedigger; buried half the town in the famine.</span></h4>
+<p>"Bell's big as a hay wagon and they wash it like a baby. That's not the part I'd want written down though. The part I'd want written down is the graves. The plots nearest the mercy-house don't settle right. Ground stays loose. I've dug this yard thirty years and I know how a grave is supposed to sit, and those don't."</p>
+</div>
+
+<div class="paper scrap"><span class="num">7</span>
+<h4><span class="where">Talenta Plains — the old frontier hospital.</span><span class="who">Undated, old paper, passed through Digma Beeve's people in the Republic.</span></h4>
+<p>"This is the first one. The Empress's own hospital from before she was Empress, when she was just the elf who came when the plague did. The bell there went up years before any other we know of. Halfling drovers won't bed their herds within a mile of it now. The beasts won't graze. Grass grows fine."</p>
+</div>
+
+<div class="paper scrap"><span class="num">8</span>
+<h4><span class="where">Thrane front — the river.</span><span class="who">This year. A purser on a supply boat; counts what the barges carry.</span></h4>
+<p>"Wagons on the towpath following the grey soldier columns — the stitched ones, the ones that don't bleed. Freight wrapped in wool bales, wheels greased so they run silent, and a nun on every wagon seat. I've shipped bells for churches before. I know the shape of a bell under wool. Six of them, going toward the front, quiet as a funeral."</p>
+</div>
+
+<div class="paper scrap"><span class="num">9</span>
+<h4><span class="where">Korranberg.</span><span class="who">Last year. A teamster; hauls night freight when the pay is right.</span></h4>
+<p>"Paid double, no questions, to move 'church fittings' out of a foundry yard at the third bell — their joke, not mine. Crates consigned 'to the Houses.' The foundry man burned the docket while I watched, on a brazier kept by the gate for exactly that. A yard that burns its own paperwork every night is a yard I don't work twice."</p>
+</div>
+
+<div class="paper scrap"><span class="num">10</span>
+<h4><span class="where">Sharn — Lower City.</span><span class="who">This year. One of ours from the old days; helped in the riots.</span></h4>
+<p>"You'll know this already but I'm sending it because of what I saw. The Chancellor's men took the bell out of the Lower City church — impounded it, wagons and writs, all proper. And the nuns WEPT. Screamed like it was a child being taken, cursed the soldiers by name. Nuns, cursing. Whatever that bell is, they don't grieve like that for brass."</p>
+</div>
+
+<div class="paper scrap"><span class="num">11</span>
+<h4><span class="where">Starilaskur — the Sovereign shrine.</span><span class="who">This spring. A tinker.</span></h4>
+<p>"New bell at the shrine, raised by subscription, and it rings every dawn loud enough to shake the crows off the granary. Thought you'd want it for the file."</p>
+</div>
+
+<div class="paper scrap"><span class="num">12</span>
+<h4><span class="where">Karrlakton.</span><span class="who">Undated. Third-hand.</span></h4>
+<p>"My cousin's wife says the cellar of the mercy-house hums at night, and her neighbor says the sisters keep something down there they call the little sister. That's all anyone knows and the cousin drinks."</p>
+</div>
+
+<div class="paper scrap"><span class="num">13</span>
+<h4><span class="where">Greenbluff — the old mining camp.</span><span class="who">Old paper, kept since the beginning. A miner who was there.</span></h4>
+<p>"Camp's been shut since the madness in the deep gallery. Ground's still wrong — nothing roots. Whatever they took out of there in my father's time went east on the rail under Imperial seal, and men in fine coats came up from Korth to ride with it. There's no bell at Greenbluff now. Greenbluff is where the bell is FROM."</p>
+</div>
+
+<div class="paper scrap"><span class="num">14</span>
+<h4><span class="where">The Qarth road, northeast, toward the white hospital in the mountains.</span><span class="who">This winter. A muleteer who works the high road.</span></h4>
+<p>"Wool-wrapped freight going up the mountain, always at night, always under Sister escort. And here's the thing you pay me for: the escort papers carry a wax seal shaped like a dove, and I have seen the same seal on the woman who preaches in Korth — the young one, the Inquisitor. Same seal going up the mountain, month after month. Whatever lives at the top of that road, the dove seal goes home to it."</p>
+</div>
+
+</div>
+</body></html>
